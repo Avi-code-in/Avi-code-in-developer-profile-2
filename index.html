@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Avirup — Independent developer building AI, Android and creative technology projects.">
+
+<title>Avirup — Developer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080808;
+    color:#f5f5f5;
+    font-family:Inter,Arial,sans-serif;
+    line-height:1.6;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #222;
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(8,8,8,.85);
+    backdrop-filter:blur(18px);
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-2px;
+}
+
+.logo span{
+    color:#baff3f;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#999;
+    font-size:14px;
+    transition:.2s;
+}
+
+.nav-links a:hover{
+    color:#fff;
+}
+
+/* HERO */
+
+.hero{
+    min-height:680px;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:70px;
+    padding:100px 0;
+}
+
+.small-title{
+    color:#baff3f;
+    font-size:11px;
+    letter-spacing:3px;
+    font-weight:bold;
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(55px,8vw,95px);
+    line-height:.95;
+    letter-spacing:-6px;
+}
+
+.hero h1 span{
+    color:#777;
+}
+
+.hero p{
+    color:#999;
+    font-size:18px;
+    max-width:620px;
+    margin:30px 0;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 21px;
+    border-radius:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.primary{
+    background:#baff3f;
+    color:#080808;
+}
+
+.secondary{
+    border:1px solid #333;
+}
+
+/* HERO CARD */
+
+.hero-card{
+    min-height:390px;
+    padding:30px;
+    border:1px solid #292929;
+    border-radius:28px;
+    background:
+        radial-gradient(
+            circle at 75% 15%,
+            #9acb35 0,
+            #273116 20%,
+            #111 50%
+        );
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    overflow:hidden;
+}
+
+.hero-card .status{
+    color:#aaa;
+    font-size:12px;
+    margin-bottom:12px;
+}
+
+.status-dot{
+    display:inline-block;
+    width:7px;
+    height:7px;
+    background:#baff3f;
+    border-radius:50%;
+    margin-right:7px;
+}
+
+.hero-card h2{
+    font-size:40px;
+    letter-spacing:-2px;
+}
+
+.hero-card p{
+    color:#aaa;
+    font-size:15px;
+    margin:8px 0 18px;
+}
+
+.hero-card a{
+    color:#baff3f;
+    font-weight:bold;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid #292929;
+    border-bottom:1px solid #292929;
+}
+
+.stat{
+    padding:30px 20px;
+    border-right:1px solid #292929;
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat strong{
+    display:block;
+    font-size:25px;
+}
+
+.stat span{
+    color:#777;
+    font-size:12px;
+}
+
+/* SECTION */
+
+section{
+    padding:120px 0;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:45px;
+}
+
+.section-head h2{
+    font-size:60px;
+    letter-spacing:-4px;
+}
+
+.section-head p{
+    color:#777;
+    max-width:350px;
+}
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:17px;
+}
+
+.project{
+    background:#111;
+    border:1px solid #242424;
+    border-radius:20px;
+    padding:18px;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-6px);
+    border-color:#444;
+}
+
+.project-number{
+    display:flex;
+    justify-content:space-between;
+    color:#666;
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.project-image{
+    height:220px;
+    border-radius:15px;
+    margin:17px 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:55px;
+    font-weight:900;
+}
+
+.dec{
+    background:
+    radial-gradient(circle at 70% 25%,
+    #d9ff85,
+    #536d2b 20%,
+    #111 65%);
+}
+
+.nova{
+    background:
+    radial-gradient(circle,
+    #6658ff,
+    #17152e 45%,
+    #0c0c0c 75%);
+}
+
+.wall{
+    background:
+    linear-gradient(135deg,#333,#090909);
+}
+
+.chem{
+    background:
+    linear-gradient(135deg,#233746,#090b0d);
+    color:#a9d9ff;
+}
+
+.myai{
+    background:
+    radial-gradient(circle,#ffb65c,#3c2110 35%,#080808 70%);
+}
+
+.ludo{
+    background:
+    linear-gradient(135deg,#333,#090909);
+}
+
+.project h3{
+    font-size:27px;
+    letter-spacing:-1px;
+}
+
+.project p{
+    color:#888;
+    font-size:14px;
+    margin:7px 0 17px;
+}
+
+.tags{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+.tags span{
+    border:1px solid #292929;
+    color:#aaa;
+    padding:5px 9px;
+    border-radius:50px;
+    font-size:10px;
+}
+
+/* ABOUT */
+
+.about{
+    border-top:1px solid #292929;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:100px;
+}
+
+.about h2{
+    font-size:55px;
+    line-height:1;
+    letter-spacing:-4px;
+}
+
+.about-text{
+    color:#999;
+    font-size:19px;
+}
+
+.about-text p{
+    margin-bottom:22px;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:30px;
+}
+
+.skills span{
+    border:1px solid #292929;
+    padding:7px 12px;
+    border-radius:50px;
+    font-size:11px;
+    color:#ddd;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    border-top:1px solid #292929;
+}
+
+.contact h2{
+    font-size:clamp(50px,7vw,85px);
+    line-height:.95;
+    letter-spacing:-5px;
+}
+
+.contact h2 span{
+    color:#777;
+}
+
+.contact p{
+    color:#777;
+    margin:25px auto;
+}
+
+.email{
+    color:#baff3f;
+    font-size:19px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #222;
+    padding:30px 0;
+    color:#666;
+    font-size:12px;
+    display:flex;
+    justify-content:space-between;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding:70px 0;
+    }
+
+    .hero h1{
+        letter-spacing:-4px;
+    }
+
+    .hero-card{
+        min-height:320px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-right:0;
+        border-bottom:1px solid #292929;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .section-head{
+        display:block;
+    }
+
+    .section-head h2{
+        font-size:48px;
+        margin-bottom:20px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .about h2{
+        font-size:45px;
+    }
+
+    section{
+        padding:85px 0;
+    }
+
+    footer{
+        margin-top:0;
+    }
+}
+
+@media(max-width:450px){
+
+    .hero h1{
+        font-size:53px;
+    }
+
+    .project-image{
+        height:180px;
+    }
+
+    .contact h2{
+        font-size:52px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="container" style="
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        width:92%;
+    ">
+
+        <a href="#home" class="logo">
+            AV<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<main>
+
+<!-- HERO -->
+
+<section id="home">
+
+<div class="container hero">
+
+<div>
+
+<p class="small-title">
+INDEPENDENT DEVELOPER · AI · ANDROID
+</p>
+
+<h1>
+Building useful
+<br>
+<span>digital experiences.</span>
+</h1>
+
+<p>
+I design and build apps, AI experiments and creative
+technology projects with a focus on simple interfaces,
+useful ideas and better experiences.
+</p>
+
+<div class="buttons">
+
+<a href="#projects" class="btn primary">
+Explore Projects →
+</a>
+
+<a href="#contact" class="btn secondary">
+Contact Me
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-card">
+
+<div class="status">
+<span class="status-dot"></span>
+Currently building
+</div>
+
+<h2>Decido</h2>
+
+<p>
+An AI-powered decision-making experience
+designed to make everyday choices simpler.
+</p>
+
+<a href="#decido">
+View project ↗
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="container stats">
+
+<div class="stat">
+<strong>AI</strong>
+<span>Experiments & Products</span>
+</div>
+
+<div class="stat">
+<strong>Android</strong>
+<span>Native App Development</span>
+</div>
+
+<div class="stat">
+<strong>∞</strong>
+<span>Ideas to Build</span>
+</div>
+
+</div>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="section-head">
+
+<div>
+<p class="small-title">SELECTED WORK</p>
+<h2>Projects</h2>
+</div>
+
+<p>
+Apps and experiments across AI,
+mobile, education and creative technology.
+</p>
+
+</div>
+
+
+<div class="projects">
+
+
+<!-- DECIDO -->
+
+<article class="project" id="decido">
+
+<div class="project-number">
+<span>01</span>
+<span>AI · ANDROID</span>
+</div>
+
+<div class="project-image dec">
+D
+</div>
+
+<h3>Decido</h3>
+
+<p>
+An AI-assisted decision companion for
+everyday and important decisions.
+</p>
+
+<div class="tags">
+<span>AI</span>
+<span>Decision Tools</span>
+<span>Android</span>
+</div>
+
+</article>
+
+
+<!-- NOVA -->
+
+<article class="project">
+
+<div class="project-number">
+<span>02</span>
+<span>AI</span>
+</div>
+
+<div class="project-image nova">
+✦
+</div>
+
+<h3>Nova AI</h3>
+
+<p>
+A multi-capability AI application focused
+on conversation and creative tools.
+</p>
+
+<div class="tags">
+<span>AI</span>
+<span>Android</span>
+</div>
+
+</article>
+
+
+<!-- WALLIFY -->
+
+<article class="project">
+
+<div class="project-number">
+<span>03</span>
+<span>UTILITY</span>
+</div>
+
+<div class="project-image wall">
+W
+</div>
+
+<h3>Wallify</h3>
+
+<p>
+A wallpaper experience built around
+discovering visual content.
+</p>
+
+<div class="tags">
+<span>Android</span>
+<span>Design</span>
+</div>
+
+</article>
+
+
+<!-- PERIODIC TABLE -->
+
+<article class="project">
+
+<div class="project-number">
+<span>04</span>
+<span>EDUCATION</span>
+</div>
+
+<div class="project-image chem">
+118
+</div>
+
+<h3>Periodic Table</h3>
+
+<p>
+An interactive chemistry learning
+and exploration application.
+</p>
+
+<div class="tags">
+<span>Education</span>
+<span>Science</span>
+</div>
+
+</article>
+
+
+<!-- MYAI -->
+
+<article class="project">
+
+<div class="project-number">
+<span>05</span>
+<span>AI · RESEARCH</span>
+</div>
+
+<div class="project-image myai">
+AI
+</div>
+
+<h3>MyAI</h3>
+
+<p>
+An experiment in building and training
+a small language model from scratch.
+</p>
+
+<div class="tags">
+<span>Python</span>
+<span>Machine Learning</span>
+<span>Transformers</span>
+</div>
+
+</article>
+
+
+<!-- LUDO -->
+
+<article class="project">
+
+<div class="project-number">
+<span>06</span>
+<span>GAME</span>
+</div>
+
+<div class="project-image ludo">
+●
+</div>
+
+<h3>Ludo Hut</h3>
+
+<p>
+A local multiplayer Ludo experience
+designed for quick pass-and-play sessions.
+</p>
+
+<div class="tags">
+<span>Game</span>
+<span>Android</span>
+</div>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container about">
+
+<div>
+
+<p class="small-title">ABOUT</p>
+
+<h2>
+Curious about
+<br>
+what technology
+<br>
+can become.
+</h2>
+
+</div>
+
+
+<div class="about-text">
+
+<p>
+I'm an independent developer exploring
+AI, Android, web development, robotics
+and product design.
+</p>
+
+<p>
+My approach is simple: start with an idea,
+build a working version, learn from it,
+and keep improving the experience.
+</p>
+
+<div class="skills">
+
+<span>Kotlin</span>
+<span>Python</span>
+<span>JavaScript</span>
+<span>Jetpack Compose</span>
+<span>AI / ML</span>
+<span>UI Design</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container contact">
+
+<p class="small-title">
+CONTACT
+</p>
+
+<h2>
+Have an idea?
+<br>
+<span>Let's build it.</span>
+</h2>
+
+<p>
+For collaborations, projects or developer enquiries.
+</p>
+
+<!-- CHANGE THIS EMAIL -->
+
+<a
+href="mailto: ajssjhdme@gmail.com"
+class="email"
+>
+your-email@example.com ↗
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="container">
+
+<span>
+© 2026 Avirup
+</span>
+
+<span>
+Built with curiosity.
+</span>
+
+</footer>
+
+
+</body>
+</html>
